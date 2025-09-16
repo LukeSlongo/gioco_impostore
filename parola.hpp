@@ -7,6 +7,7 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QCheckBox>
 //#include "giocatori.hpp"
 
 class Parola : public QWidget {
@@ -19,6 +20,7 @@ public:
     QLineEdit* parolascelta;
     QLineEdit* numero_impostori;
     QPushButton* fatto;
+    QCheckBox* spunta;
 signals:
     void passa_a_assegna(Parola*);
 };

@@ -61,6 +61,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
         pass->setPropertiesDC(p[posizione]);
         //posizione++;
         stack->setCurrentWidget(pass);
+
+        if(word->spunta->isChecked()){
+            word->parolascelta->setText(parolaCasuale());
+        }
     });
 
     connect(pass, &Passa::passa_a_nuovo, this, [this](){
@@ -86,4 +90,44 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
         this->thing->pfine->hide();
         this->thing->ok->show();
     });
+}
+
+QString MainWindow::parolaCasuale()
+{
+    // Apri il file (se usi risorse usa ":/lista_categorie.json")
+    QFile file("lista_categorie.json");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "Impossibile aprire il file JSON";
+        return {};
+    }
+
+    QByteArray data = file.readAll();
+    file.close();
+
+    QJsonParseError err;
+    QJsonDocument doc = QJsonDocument::fromJson(data, &err);
+    if (err.error != QJsonParseError::NoError) {
+        qWarning() << "Errore parsing JSON:" << err.errorString();
+        return {};
+    }
+
+    QJsonObject root = doc.object();
+
+    // Metti tutti gli elementi di tutte le categorie in una sola lista
+    QStringList tutteLeParole;
+    for (auto it = root.begin(); it != root.end(); ++it) {
+        QJsonArray arr = it.value().toArray();
+        for (const QJsonValue &v : arr) {
+            tutteLeParole.append(v.toString());
+        }
+    }
+
+    if (tutteLeParole.isEmpty()) {
+        qWarning() << "Nessuna parola trovata";
+        return {};
+    }
+
+    // Scegli indice casuale
+    int index = QRandomGenerator::global()->bounded(tutteLeParole.size());
+    return tutteLeParole.at(index);
 }

@@ -11,6 +11,11 @@
 #include "passa.hpp"
 #include "cosa.hpp"
 #include <QRandomGenerator>
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QStringList>
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -23,6 +28,7 @@ private:
     int posizione;
 public:
     MainWindow(QWidget *parent = nullptr);
+    QString parolaCasuale();
 };
 
 #endif

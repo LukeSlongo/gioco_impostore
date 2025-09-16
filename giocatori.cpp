@@ -7,6 +7,7 @@ Giocatori::Giocatori(QWidget *parent){
     fatto = new QPushButton("Avanti", this);
 
     QLineEdit* nomepersona = new QLineEdit();
+    nomepersona->setPlaceholderText("Nome");
     layoutgiocatori->addWidget(nomepersona);
 
     le_giocatori.append(nomepersona);
@@ -17,7 +18,7 @@ Giocatori::Giocatori(QWidget *parent){
 
     connect(aggiungi, &QPushButton::clicked, this, [this]() { 
         QLineEdit* np = new QLineEdit();
-
+        np->setPlaceholderText("Nome");
         layoutgiocatori->addWidget(np);
         le_giocatori.append(np);
     });
