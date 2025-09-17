@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "qmainwindow": "cpp",
-        "qhboxlayout": "cpp",
-        "qlineedit": "cpp",
-        "qvboxlayout": "cpp",
-        "qrandomgenerator": "cpp"
-    }
-}
