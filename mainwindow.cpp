@@ -94,9 +94,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
 QString MainWindow::parolaCasuale()
 {
-    // Apri il file (se usi risorse usa ":/lista_categorie.json")
-    QFile file("lista_categorie.json");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    QFile file(":/lista_categorie.json");
+    if (!file.open(QIODevice::ReadOnly)) {
         qWarning() << "Impossibile aprire il file JSON";
         return {};
     }

@@ -6,6 +6,7 @@ TEMPLATE = app
 TARGET = gioco
 INCLUDEPATH += .
 QT += widgets
+RESOURCES += resources.qrc
 
 # You can make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.

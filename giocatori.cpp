@@ -1,26 +1,51 @@
 #include "giocatori.hpp"
 
 Giocatori::Giocatori(QWidget *parent){
-    tt = new QHBoxLayout(this);
-    aggiungi = new QPushButton("+", this);
+    tt = new QVBoxLayout(this);
     layoutgiocatori = new QVBoxLayout();
+    layoutpulsanti = new QHBoxLayout();
+    scroll = new QScrollArea();
+    container_scroll = new QWidget();
+
+    container_scroll->setLayout(layoutgiocatori);
+    scroll->setWidget(container_scroll);
+    scroll->setWidgetResizable(true);
+    tt->addWidget(scroll);
+    
+    aggiungi = new QPushButton("+", this);
+    togli = new QPushButton("-", this);
     fatto = new QPushButton("Avanti", this);
 
     QLineEdit* nomepersona = new QLineEdit();
     nomepersona->setPlaceholderText("Nome");
+
     layoutgiocatori->addWidget(nomepersona);
+    layoutpulsanti->addWidget(togli, 1);
+    layoutpulsanti->addWidget(aggiungi,1);
+    layoutpulsanti->addWidget(fatto,2);
 
     le_giocatori.append(nomepersona);
 
-    tt->addLayout(layoutgiocatori);
-    tt->addWidget(aggiungi);
-    tt->addWidget(fatto);
+    //tt->addLayout(layoutgiocatori);
+    tt->addLayout(layoutpulsanti);
+    scroll->setFrameShape(QFrame::NoFrame);
+
 
     connect(aggiungi, &QPushButton::clicked, this, [this]() { 
         QLineEdit* np = new QLineEdit();
         np->setPlaceholderText("Nome");
         layoutgiocatori->addWidget(np);
         le_giocatori.append(np);
+        tt->invalidate();
+        tt->activate();
+    });
+
+    connect(togli, &QPushButton::clicked, this, [this]() { 
+        QLineEdit* todelete = le_giocatori[le_giocatori.size()-1];
+        layoutgiocatori->removeWidget(todelete);
+        delete todelete;
+        le_giocatori.pop_back();
+        //giocatori.pop_back();
     });
 
     connect(fatto, &QPushButton::clicked, this, [this]() { 

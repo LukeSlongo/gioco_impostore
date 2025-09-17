@@ -1,7 +1,9 @@
 #include "parola.hpp"
 
 Parola::Parola(QWidget *parent){
-    QHBoxLayout* layout = new QHBoxLayout(this);
+    QVBoxLayout* layout = new QVBoxLayout(this);
+    QHBoxLayout* parolaimpostori = new QHBoxLayout();
+    QHBoxLayout* spuntafatto = new QHBoxLayout();
 
     fatto = new QPushButton("Avanti");
     parolascelta = new QLineEdit();
@@ -11,12 +13,15 @@ Parola::Parola(QWidget *parent){
 
     spunta = new QCheckBox("Parola generata automaticamente");
 
-    layout->addWidget(parolascelta);
-    layout->addWidget(numero_impostori);
-    layout->addWidget(spunta);
-    layout->addWidget(fatto);
+    parolaimpostori->addWidget(parolascelta, 8);
+    parolaimpostori->addWidget(numero_impostori, 2);
+    spuntafatto->addWidget(spunta);
+    spuntafatto->addWidget(fatto);
 
-    numero_impostori->setMaximumWidth(50);
+    layout->addLayout(parolaimpostori);
+    layout->addLayout(spuntafatto);
+
+    //numero_impostori->setMaximumWidth(50);
 
     connect(fatto, &QPushButton::clicked, this, [this]() { emit passa_a_assegna(this); });
 }

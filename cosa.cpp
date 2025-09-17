@@ -1,7 +1,7 @@
 #include "cosa.hpp"
 
 Cosa::Cosa(QString name, QString parola, QWidget *parent){
-    QHBoxLayout* layout = new QHBoxLayout(this);
+    QVBoxLayout* layout = new QVBoxLayout(this);
     
     if(name.contains("[]")){
         text = new QLabel("Sei un impostore");
@@ -17,6 +17,7 @@ Cosa::Cosa(QString name, QString parola, QWidget *parent){
     layout->addWidget(pfine);
 
     pfine->hide();
+    text->setWordWrap(true);
 
     connect(ok, &QPushButton::clicked, this, [this]() { emit passa_a_passa(); });
     connect(pfine, &QPushButton::clicked, this, [this]() { emit fine(); });

@@ -58,6 +58,7 @@ SOURCES       = cosa.cpp \
 		mainwindow.cpp \
 		parola.cpp \
 		passa.cpp /home/luca/Documenti/cartellagit/gioco/gioco.js_plugin_import.cpp \
+		qrc_resources.cpp \
 		moc_cosa.cpp \
 		moc_giocatori.cpp \
 		moc_mainwindow.cpp \
@@ -70,6 +71,7 @@ OBJECTS       = cosa.o \
 		parola.o \
 		passa.o \
 		gioco.js_plugin_import.o \
+		qrc_resources.o \
 		moc_cosa.o \
 		moc_giocatori.o \
 		moc_mainwindow.o \
@@ -449,6 +451,7 @@ Makefile: gioco.pro ../../../Qt/6.9.2/wasm_singlethread/mkspecs/wasm-emscripten/
 		../../../Qt/6.9.2/wasm_singlethread/mkspecs/features/yacc.prf \
 		../../../Qt/6.9.2/wasm_singlethread/mkspecs/features/lex.prf \
 		gioco.pro \
+		resources.qrc \
 		../../../Qt/6.9.2/wasm_singlethread/plugins/platforms/libqwasm.prl \
 		../../../Qt/6.9.2/wasm_singlethread/plugins/iconengines/libqsvgicon.prl \
 		../../../Qt/6.9.2/wasm_singlethread/plugins/imageformats/libqgif.prl \
@@ -636,6 +639,7 @@ Makefile: gioco.pro ../../../Qt/6.9.2/wasm_singlethread/mkspecs/wasm-emscripten/
 ../../../Qt/6.9.2/wasm_singlethread/mkspecs/features/yacc.prf:
 ../../../Qt/6.9.2/wasm_singlethread/mkspecs/features/lex.prf:
 gioco.pro:
+resources.qrc:
 ../../../Qt/6.9.2/wasm_singlethread/plugins/platforms/libqwasm.prl:
 ../../../Qt/6.9.2/wasm_singlethread/plugins/iconengines/libqsvgicon.prl:
 ../../../Qt/6.9.2/wasm_singlethread/plugins/imageformats/libqgif.prl:
@@ -659,6 +663,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents resources.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/6.9.2/wasm_singlethread/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents cosa.hpp giocatori.hpp mainwindow.hpp parola.hpp passa.hpp $(DISTDIR)/
 	$(COPY_FILE) --parents cosa.cpp giocatori.cpp main.cpp mainwindow.cpp parola.cpp passa.cpp $(DISTDIR)/
@@ -705,8 +710,14 @@ compiler_appjs_clean:
 compiler_appsvg_make_all:
 compiler_appsvg_clean:
 	-$(DEL_FILE) qtlogo.svg
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_resources.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_resources.cpp
+qrc_resources.cpp: resources.qrc \
+		../../../Qt/6.9.2/gcc_64/libexec/rcc \
+		lista_categorie.json
+	/home/luca/Qt/6.9.2/gcc_64/libexec/rcc -name resources --no-zstd resources.qrc -o qrc_resources.cpp
+
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
@@ -1125,6 +1136,9 @@ moc_giocatori.cpp: giocatori.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextformat.h \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qpen.h \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextoption.h \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QScrollArea \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qscrollarea.h \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qabstractscrollarea.h \
 		moc_predefs.h \
 		../../../Qt/6.9.2/gcc_64/libexec/moc
 	/home/luca/Qt/6.9.2/gcc_64/libexec/moc $(DEFINES) --include /home/luca/Documenti/cartellagit/gioco/moc_predefs.h -I/home/luca/Qt/6.9.2/wasm_singlethread/mkspecs/wasm-emscripten -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Qt/6.9.2/wasm_singlethread/include -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtWidgets -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtGui -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtCore -I/usr/include/c++/14 -I/usr/include/x86_64-linux-gnu/c++/14 -I/usr/include/c++/14/backward -I/usr/lib/gcc/x86_64-linux-gnu/14/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include giocatori.hpp -o moc_giocatori.cpp
@@ -1340,6 +1354,9 @@ moc_mainwindow.cpp: mainwindow.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextformat.h \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qpen.h \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextoption.h \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QScrollArea \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qscrollarea.h \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qabstractscrollarea.h \
 		parola.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QCheckBox \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qcheckbox.h \
@@ -1799,7 +1816,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean 
 
 ####### Compile
 
@@ -2209,7 +2226,10 @@ giocatori.o: giocatori.cpp giocatori.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextdocument.h \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextformat.h \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qpen.h \
-		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextoption.h
+		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextoption.h \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QScrollArea \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qscrollarea.h \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qabstractscrollarea.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o giocatori.o giocatori.cpp
 
 main.o: main.cpp ../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QApplication \
@@ -2427,6 +2447,9 @@ main.o: main.cpp ../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QApplicat
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextformat.h \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qpen.h \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextoption.h \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QScrollArea \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qscrollarea.h \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qabstractscrollarea.h \
 		parola.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QCheckBox \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qcheckbox.h \
@@ -2668,6 +2691,9 @@ mainwindow.o: mainwindow.cpp mainwindow.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextformat.h \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qpen.h \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextoption.h \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QScrollArea \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qscrollarea.h \
+		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qabstractscrollarea.h \
 		parola.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QCheckBox \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qcheckbox.h \
@@ -3111,6 +3137,9 @@ passa.o: passa.cpp passa.hpp \
 
 gioco.js_plugin_import.o: /home/luca/Documenti/cartellagit/gioco/gioco.js_plugin_import.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gioco.js_plugin_import.o /home/luca/Documenti/cartellagit/gioco/gioco.js_plugin_import.cpp
+
+qrc_resources.o: qrc_resources.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resources.o qrc_resources.cpp
 
 moc_cosa.o: moc_cosa.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_cosa.o moc_cosa.cpp
