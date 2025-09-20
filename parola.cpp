@@ -12,9 +12,10 @@ Parola::Parola(QWidget *parent){
     numero_impostori->setPlaceholderText("Impostori");
 
     spunta = new QCheckBox("Parola generata automaticamente");
+    spunta->setStyleSheet("QCheckBox { font-size: 11pt; }");
 
-    parolaimpostori->addWidget(parolascelta, 8);
-    parolaimpostori->addWidget(numero_impostori, 2);
+    parolaimpostori->addWidget(parolascelta, 73);
+    parolaimpostori->addWidget(numero_impostori, 27);
     spuntafatto->addWidget(spunta);
     spuntafatto->addWidget(fatto);
 
@@ -24,4 +25,6 @@ Parola::Parola(QWidget *parent){
     //numero_impostori->setMaximumWidth(50);
 
     connect(fatto, &QPushButton::clicked, this, [this]() { emit passa_a_assegna(this); });
+
+    setFocusPolicy(Qt::ClickFocus);
 }

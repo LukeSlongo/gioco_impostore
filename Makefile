@@ -929,7 +929,7 @@ moc_cosa.cpp: cosa.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextdocument.h \
 		moc_predefs.h \
 		../../../Qt/6.9.2/gcc_64/libexec/moc
-	/home/luca/Qt/6.9.2/gcc_64/libexec/moc $(DEFINES) --include /home/luca/Documenti/cartellagit/gioco/moc_predefs.h -I/home/luca/Qt/6.9.2/wasm_singlethread/mkspecs/wasm-emscripten -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Qt/6.9.2/wasm_singlethread/include -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtWidgets -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtGui -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtCore -I/usr/include/c++/14 -I/usr/include/x86_64-linux-gnu/c++/14 -I/usr/include/c++/14/backward -I/usr/lib/gcc/x86_64-linux-gnu/14/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include cosa.hpp -o moc_cosa.cpp
+	/home/luca/Qt/6.9.2/gcc_64/libexec/moc $(DEFINES) --include /home/luca/Documenti/cartellagit/gioco/moc_predefs.h -I/home/luca/Qt/6.9.2/wasm_singlethread/mkspecs/wasm-emscripten -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Qt/6.9.2/wasm_singlethread/include -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtWidgets -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtGui -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtCore cosa.hpp -o moc_cosa.cpp
 
 moc_giocatori.cpp: giocatori.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QWidget \
@@ -1141,7 +1141,7 @@ moc_giocatori.cpp: giocatori.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qabstractscrollarea.h \
 		moc_predefs.h \
 		../../../Qt/6.9.2/gcc_64/libexec/moc
-	/home/luca/Qt/6.9.2/gcc_64/libexec/moc $(DEFINES) --include /home/luca/Documenti/cartellagit/gioco/moc_predefs.h -I/home/luca/Qt/6.9.2/wasm_singlethread/mkspecs/wasm-emscripten -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Qt/6.9.2/wasm_singlethread/include -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtWidgets -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtGui -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtCore -I/usr/include/c++/14 -I/usr/include/x86_64-linux-gnu/c++/14 -I/usr/include/c++/14/backward -I/usr/lib/gcc/x86_64-linux-gnu/14/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include giocatori.hpp -o moc_giocatori.cpp
+	/home/luca/Qt/6.9.2/gcc_64/libexec/moc $(DEFINES) --include /home/luca/Documenti/cartellagit/gioco/moc_predefs.h -I/home/luca/Qt/6.9.2/wasm_singlethread/mkspecs/wasm-emscripten -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Qt/6.9.2/wasm_singlethread/include -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtWidgets -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtGui -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtCore giocatori.hpp -o moc_giocatori.cpp
 
 moc_mainwindow.cpp: mainwindow.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QMainWindow \
@@ -1387,7 +1387,7 @@ moc_mainwindow.cpp: mainwindow.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtCore/QStringList \
 		moc_predefs.h \
 		../../../Qt/6.9.2/gcc_64/libexec/moc
-	/home/luca/Qt/6.9.2/gcc_64/libexec/moc $(DEFINES) --include /home/luca/Documenti/cartellagit/gioco/moc_predefs.h -I/home/luca/Qt/6.9.2/wasm_singlethread/mkspecs/wasm-emscripten -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Qt/6.9.2/wasm_singlethread/include -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtWidgets -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtGui -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtCore -I/usr/include/c++/14 -I/usr/include/x86_64-linux-gnu/c++/14 -I/usr/include/c++/14/backward -I/usr/lib/gcc/x86_64-linux-gnu/14/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.hpp -o moc_mainwindow.cpp
+	/home/luca/Qt/6.9.2/gcc_64/libexec/moc $(DEFINES) --include /home/luca/Documenti/cartellagit/gioco/moc_predefs.h -I/home/luca/Qt/6.9.2/wasm_singlethread/mkspecs/wasm-emscripten -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Qt/6.9.2/wasm_singlethread/include -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtWidgets -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtGui -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtCore mainwindow.hpp -o moc_mainwindow.cpp
 
 moc_parola.cpp: parola.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QWidget \
@@ -1598,7 +1598,7 @@ moc_parola.cpp: parola.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/qcheckbox.h \
 		moc_predefs.h \
 		../../../Qt/6.9.2/gcc_64/libexec/moc
-	/home/luca/Qt/6.9.2/gcc_64/libexec/moc $(DEFINES) --include /home/luca/Documenti/cartellagit/gioco/moc_predefs.h -I/home/luca/Qt/6.9.2/wasm_singlethread/mkspecs/wasm-emscripten -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Qt/6.9.2/wasm_singlethread/include -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtWidgets -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtGui -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtCore -I/usr/include/c++/14 -I/usr/include/x86_64-linux-gnu/c++/14 -I/usr/include/c++/14/backward -I/usr/lib/gcc/x86_64-linux-gnu/14/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include parola.hpp -o moc_parola.cpp
+	/home/luca/Qt/6.9.2/gcc_64/libexec/moc $(DEFINES) --include /home/luca/Documenti/cartellagit/gioco/moc_predefs.h -I/home/luca/Qt/6.9.2/wasm_singlethread/mkspecs/wasm-emscripten -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Qt/6.9.2/wasm_singlethread/include -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtWidgets -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtGui -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtCore parola.hpp -o moc_parola.cpp
 
 moc_passa.cpp: passa.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtWidgets/QWidget \
@@ -1802,7 +1802,7 @@ moc_passa.cpp: passa.hpp \
 		../../../Qt/6.9.2/wasm_singlethread/include/QtGui/qtextdocument.h \
 		moc_predefs.h \
 		../../../Qt/6.9.2/gcc_64/libexec/moc
-	/home/luca/Qt/6.9.2/gcc_64/libexec/moc $(DEFINES) --include /home/luca/Documenti/cartellagit/gioco/moc_predefs.h -I/home/luca/Qt/6.9.2/wasm_singlethread/mkspecs/wasm-emscripten -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Qt/6.9.2/wasm_singlethread/include -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtWidgets -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtGui -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtCore -I/usr/include/c++/14 -I/usr/include/x86_64-linux-gnu/c++/14 -I/usr/include/c++/14/backward -I/usr/lib/gcc/x86_64-linux-gnu/14/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include passa.hpp -o moc_passa.cpp
+	/home/luca/Qt/6.9.2/gcc_64/libexec/moc $(DEFINES) --include /home/luca/Documenti/cartellagit/gioco/moc_predefs.h -I/home/luca/Qt/6.9.2/wasm_singlethread/mkspecs/wasm-emscripten -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Documenti/cartellagit/gioco -I/home/luca/Qt/6.9.2/wasm_singlethread/include -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtWidgets -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtGui -I/home/luca/Qt/6.9.2/wasm_singlethread/include/QtCore passa.hpp -o moc_passa.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:

@@ -41,11 +41,12 @@ Giocatori::Giocatori(QWidget *parent){
     });
 
     connect(togli, &QPushButton::clicked, this, [this]() { 
-        QLineEdit* todelete = le_giocatori[le_giocatori.size()-1];
-        layoutgiocatori->removeWidget(todelete);
-        delete todelete;
-        le_giocatori.pop_back();
-        //giocatori.pop_back();
+        if(le_giocatori.size()>1){
+            QLineEdit* todelete = le_giocatori[le_giocatori.size()-1];
+            layoutgiocatori->removeWidget(todelete);
+            delete todelete;
+            le_giocatori.pop_back();
+        }
     });
 
     connect(fatto, &QPushButton::clicked, this, [this]() { 
